@@ -2,20 +2,20 @@
 
 <form action="/movies/create" method="post">
    <label for="title"> Title:</label>
-    <input id="title" type="text" name="title" />
-  
-
+    <input id="title" type="text" name="title"></input>
+  <br>
   <label for="genre"> Genre:</label>
-    <input id="genre" type="text" name="genre" />
-  
-
+    <input id="genre" type="text" name="genre"></input>
+  <br>
   <label for="plot"> Plot:</label>
-    <input id="plot" type="text" name="plot" />
-  
-  
+    <input id="plot" type="text" name="plot"></input>
+  <br>
   <label for="cast"> Cast:</label>
-    <input id="cast" type="text" name="cast" />
-  
-
+    <select name="cast" id="cast" multiple="multiple">
+      {{#each response}}
+      <option value="{{id}}">{{name}}</option>
+      {{/each}}
+    </select>
+  <br>
   <button type="submit"> Create </button>
 </form>
