@@ -10,7 +10,7 @@ router.get('/movies/create', (req, res, next) => {
 router.post('/movies/create', (req, res, next) => {
   const { title, genre, plot, cast } = req.body;
   console.log(req.body);
-
+// 
   Movie.create({ title, genre, plot, cast })
     .then(() => res.redirect('/movies'))
     .catch(error => res.redirect('movies/new-movie.hbs', error));
